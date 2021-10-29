@@ -5,23 +5,42 @@ public class Human implements Participants {
 
     private String name;
     private int maxDistance;
-    public int maxHeight;
+    private int maxHeight;
+
+    private boolean isCapable;
 
     public Human(String name, int maxDistance, int maxHeight){
         this.maxDistance = maxDistance;
         this.maxHeight = maxHeight;
         this.name = name;
+        isCapable = true;
     }
 
     @Override
     public void run(int distance) {
-        boolean isSuccess = maxDistance >= distance;
-        System.out.println(name + " " + "run " + isSuccess);
+        boolean isSuccess = false;
+        if (isCapable == true && maxDistance >= distance) {
+            isSuccess = maxDistance >= distance;
+            isCapable = true;
+            System.out.println(name + " " + "run " + isSuccess);
+        }else if (isCapable == true && maxDistance < distance){
+            isSuccess = maxDistance < distance;
+            isCapable = false;
+            System.out.println(name + " " + "leave distance");
+        }
     }
 
     @Override
     public void jump(int height) {
-        boolean isSuccess = maxHeight >= height;
-        System.out.println(name + " " + "jump " + isSuccess);
+        boolean isSuccess = false;
+        if (isCapable == true && maxHeight >= height) {
+            isSuccess = maxHeight >= height;
+            isCapable = true;
+            System.out.println(name + " " + "jump " + isSuccess);
+        }else if (isCapable == true && maxHeight < height){
+            isSuccess = maxDistance < height;
+            isCapable = false;
+            System.out.println(name + " " + "leave distance");
+        }
     }
 }

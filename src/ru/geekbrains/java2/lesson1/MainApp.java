@@ -17,7 +17,7 @@ public class MainApp {
 
         Participants[] participants = new Participants[3];
         participants[0] = new Cat("Cat", 40, 10);
-        participants[1] = new Human("Human", 100, 5);
+        participants[1] = new Human("Human", 1000, 50);
         participants[2] = new Robot("Robot", 500, 250);
 
 
