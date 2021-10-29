@@ -11,9 +11,11 @@ import ru.geekbrains.java2.lesson1.Participants.Robot;
 public class MainApp {
 
     public static void main(String[] args) {
-        Obstacles[] obstacle = new Obstacles[2];
+        Obstacles[] obstacle = new Obstacles[3];
         obstacle[0] = new Path(210);
         obstacle[1] = new Wall(50);
+        obstacle[2] = new Wall(150);
+
 
         Participants[] participants = new Participants[3];
         participants[0] = new Cat("Cat", 40, 10);
