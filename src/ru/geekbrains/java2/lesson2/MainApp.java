@@ -6,9 +6,17 @@ public class MainApp {
 
     private static int convertString(String[][] arr) throws MyArrayDataException, MyArraySizeException{
         int result = 0;
-        if (arr.length != 4 || arr[0].length != 4) {
+        if (arr.length != 4) {
             throw new MyArraySizeException(arr);
         }
+        for (int i = 0; i < arr.length ; i++) {
+            for (int j = 0; j < arr[i].length ; j++) {
+                if (arr[i].length != 4){
+                    throw new MyArraySizeException(arr);
+                }
+            }
+        }
+
         for (int i = 0; i <  arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
                 if (!arr[i][j].matches("[0-9]+")){
