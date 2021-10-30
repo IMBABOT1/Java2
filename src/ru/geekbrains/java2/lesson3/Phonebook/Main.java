@@ -6,6 +6,7 @@ public class Main {
         Phonebook phonebook = new Phonebook();
         phonebook.add(new Person("Ivanov", 8000));
         phonebook.add(new Person("Ivanov", 880001));
+        phonebook.add(new Person("Stav", 123));
 
         System.out.println(phonebook.get("Ivanov"));
 

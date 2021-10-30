@@ -3,7 +3,11 @@ import java.util.*;
 
 public class Phonebook {
 
-    private HashMap<String, List<Person>> map = new HashMap<>();
+    private HashMap<String, List<Person>> map;
+
+    public Phonebook(){
+        map = new HashMap<>();
+    }
 
     public void add(Person p){
         List<Person> current = map.get(p.getLastname());
