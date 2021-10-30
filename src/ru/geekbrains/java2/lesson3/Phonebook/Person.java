@@ -1,6 +1,4 @@
-package ru.geekbrains.java2.lesson3;
-
-import javax.swing.*;
+package ru.geekbrains.java2.lesson3.Phonebook;
 
 public class Person {
 
@@ -10,6 +8,10 @@ public class Person {
     public Person(String lastname, int phone){
         this.lastname = lastname;
         this.phone = phone;
+    }
+
+    public String getLastname(){
+        return lastname;
     }
 
 
@@ -28,6 +30,10 @@ public class Person {
         }
         Person p = (Person) obj;
         return this.lastname.equals(p.lastname) && this.phone == p.phone;
+    }
 
+    @Override
+    public String toString() {
+        return this.lastname + " " + this.phone;
     }
 }
